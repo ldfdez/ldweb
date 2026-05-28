@@ -3,7 +3,9 @@
     <nav class="masthead-nav masthead-nav--left">
       <a href="{{ '/' | relative_url }}">Inicio</a>
     </nav>
-    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <a class="site-title" href="{{ '/' | relative_url }}" aria-label="{{ site.title }}">
+      <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="{{ site.title }}" class="site-logo-img">
+    </a>
     <nav class="masthead-nav masthead-nav--right">
       <a href="{{ '/sobre' | relative_url }}">Sobre</a>
     </nav>
