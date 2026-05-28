@@ -23,3 +23,5 @@ permalink: /sobre/
 <p>No escribo para tener razón. Escribo para entender, y muchas veces termino sin entender nada, pero con el texto hecho. Eso también vale.</p>
 
 <p>Si has llegado hasta aquí, bienvenido. No prometo frecuencia ni temática fija. Prometo que cada texto habrá merecido ser escrito.</p>
+
+<p><em>Puedes escribirme a <a href="mailto:ldfdez@ldfdez.es">ldfdez@ldfdez.es</a></em></p>
