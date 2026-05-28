@@ -2,12 +2,23 @@
 layout: default
 ---
 
+{% if site.tagline %}
+<div class="home-tagline">
+  <p>{{ site.tagline }}</p>
+</div>
+{% endif %}
+
 <ul class="post-list">
   {% for post in site.posts %}
   <li class="post-item">
-    <p class="post-date">{% include date_es.html date=post.date %}</p>
-    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-    <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+    <span class="post-item__date">{% include date_es.html date=post.date %}</span>
+    <h2 class="post-item__title">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </h2>
+    {% assign exc = post.excerpt | strip_html | strip | truncate: 200 %}
+    {% if exc != '' and exc != post.title %}
+    <p class="post-item__excerpt">{{ exc }}</p>
+    {% endif %}
   </li>
   {% endfor %}
 </ul>

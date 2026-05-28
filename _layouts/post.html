@@ -2,15 +2,21 @@
 layout: default
 ---
 
+<div class="reading-bar" aria-hidden="true"></div>
+
 <article>
   <header class="post-header">
-    <p class="post-date">{% include date_es.html date=page.date %}</p>
-    <h1>{{ page.title }}</h1>
+    <time class="post-header__date" datetime="{{ page.date | date: '%Y-%m-%d' }}">
+      {% include date_es.html date=page.date %}
+    </time>
+    <h1 class="post-header__title">{{ page.title }}</h1>
   </header>
+
   <div class="post-body">
     {{ content }}
   </div>
-  <nav class="post-nav">
-    <a href="{{ '/' | relative_url }}">&larr; Volver al inicio</a>
+
+  <nav class="post-nav" aria-label="Navegación del artículo">
+    <a class="back-link" href="{{ '/' | relative_url }}">Volver al inicio</a>
   </nav>
 </article>
