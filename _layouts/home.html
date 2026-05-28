@@ -10,15 +10,39 @@ layout: default
 
 <ul class="post-list">
   {% for post in site.posts %}
-  <li class="post-item">
-    <span class="post-item__date">{% include date_es.html date=post.date %}</span>
-    <h2 class="post-item__title">
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </h2>
-    {% assign exc = post.excerpt | strip_html | strip | truncate: 200 %}
-    {% if exc != '' and exc != post.title %}
-    <p class="post-item__excerpt">{{ exc }}</p>
+
+  {% comment %} Extraer primera imagen del contenido {% endcomment %}
+  {% assign has_image = false %}
+  {% assign first_image = '' %}
+  {% assign img_parts = post.content | split: '<img' %}
+  {% if img_parts.size > 1 %}
+    {% assign src_raw = img_parts[1] | split: 'src="' | last | split: '"' | first %}
+    {% if src_raw contains 'http' %}
+      {% assign first_image = src_raw %}
+      {% assign has_image = true %}
+    {% endif %}
+  {% endif %}
+
+  <li class="post-item{% if has_image %} has-thumb{% endif %}">
+    <div class="post-item__body">
+      <time class="post-item__date" datetime="{{ post.date | date: '%Y-%m-%d' }}">
+        {% include date_es.html date=post.date %}
+      </time>
+      <h2 class="post-item__title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h2>
+      {% assign exc = post.excerpt | strip_html | strip | truncate: 160 %}
+      {% if exc != '' and exc != post.title %}
+      <p class="post-item__excerpt">{{ exc }}</p>
+      {% endif %}
+    </div>
+
+    {% if has_image %}
+    <div class="post-item__thumb" aria-hidden="true">
+      <img src="{{ first_image }}" alt="" loading="lazy">
+    </div>
     {% endif %}
   </li>
+
   {% endfor %}
 </ul>
