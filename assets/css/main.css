@@ -361,25 +361,6 @@ main {
 .post-body p { margin-bottom: 1.4em; }
 .post-body p:last-child { margin-bottom: 0; }
 
-.post-body > p:first-of-type::first-letter {
-  -webkit-initial-letter: 3;
-  initial-letter: 3;
-  font-family: var(--fd);
-  font-weight: 200;
-  font-optical-sizing: auto;
-  color: var(--accent);
-  margin-right: .14em;
-  padding-right: .02em;
-}
-
-.post-body figure + p::first-letter {
-  -webkit-initial-letter: normal;
-  initial-letter: normal;
-  font-size: inherit;
-  font-family: inherit;
-  font-weight: inherit;
-  color: inherit;
-}
 
 .post-body strong { font-weight: 600; }
 .post-body em { font-style: italic; }
