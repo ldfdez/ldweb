@@ -2,6 +2,9 @@
   command = "bundle exec jekyll build"
   publish = "_site"
 
+[build.environment]
+  TZ = "Europe/Madrid"
+
 [[redirects]]
   from = "/admin"
   to = "/admin/index.html"
