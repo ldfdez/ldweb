@@ -360,23 +360,25 @@ main {
 
 .post-body p { margin-bottom: 1.4em; }
 .post-body p:last-child { margin-bottom: 0; }
-.post-body p + p { clear: left; }
 
 .post-body > p:first-of-type::first-letter {
+  -webkit-initial-letter: 3;
+  initial-letter: 3;
   font-family: var(--fd);
-  font-size: 4.2em;
   font-weight: 200;
   font-optical-sizing: auto;
-  float: left;
-  line-height: .74;
-  margin: .07em .10em 0 0;
   color: var(--accent);
+  margin-right: .14em;
+  padding-right: .02em;
 }
 
 .post-body figure + p::first-letter {
-  font-size: inherit; float: none; margin: 0;
-  color: inherit; line-height: inherit;
-  font-family: inherit; font-weight: inherit;
+  -webkit-initial-letter: normal;
+  initial-letter: normal;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
 }
 
 .post-body strong { font-weight: 600; }
