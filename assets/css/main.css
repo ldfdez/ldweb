@@ -1,0 +1,230 @@
+/* LD — Estilos principales */
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --texto: #1a1a1a;
+  --secundario: #666;
+  --borde: #e8e4df;
+  --fondo: #faf9f7;
+  --acento: #8b3a2a;
+  --ancho: 680px;
+}
+
+html { font-size: 18px; }
+
+body {
+  font-family: 'EB Garamond', Georgia, serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.75;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── CABECERA ─── */
+header {
+  border-bottom: 1px solid var(--borde);
+  padding: 1.5rem 1.5rem;
+}
+
+.header-inner {
+  max-width: var(--ancho);
+  margin: 0 auto;
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--texto);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.site-title:hover { color: var(--acento); }
+
+nav { display: flex; gap: 1.5rem; }
+
+nav a {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secundario);
+  text-decoration: none;
+}
+
+nav a:hover { color: var(--acento); }
+
+/* ─── CONTENIDO PRINCIPAL ─── */
+main {
+  flex: 1;
+  max-width: var(--ancho);
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+/* ─── LISTA DE POSTS (inicio) ─── */
+.post-list { list-style: none; }
+
+.post-item {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+.post-item:last-child { border-bottom: none; }
+
+.post-date {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secundario);
+  margin-bottom: 0.5rem;
+}
+
+.post-item h2 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 0.6rem;
+}
+
+.post-item h2 a {
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.post-item h2 a:hover { color: var(--acento); }
+
+.post-excerpt {
+  color: var(--secundario);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ─── POST INDIVIDUAL ─── */
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--borde);
+}
+
+.post-header .post-date { margin-bottom: 0.75rem; }
+
+.post-header h1 {
+  font-size: 1.9rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--texto);
+}
+
+/* ─── CUERPO DEL POST ─── */
+.post-body { font-size: 1.05rem; }
+
+.post-body p {
+  margin-bottom: 1.3em;
+}
+
+.post-body p:last-child { margin-bottom: 0; }
+
+.post-body strong, .post-body b { font-weight: 500; }
+
+.post-body em, .post-body i { font-style: italic; }
+
+.post-body h2, .post-body h3 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin: 2em 0 0.75em;
+}
+
+.post-body blockquote {
+  border-left: 2px solid var(--acento);
+  padding-left: 1.25rem;
+  margin: 1.5em 0;
+  color: var(--secundario);
+  font-style: italic;
+}
+
+.post-body img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 2em 0;
+}
+
+.post-body figure { margin: 2em 0; }
+.post-body figure figcaption {
+  font-size: 0.8rem;
+  color: var(--secundario);
+  text-align: center;
+  margin-top: 0.4rem;
+}
+
+.post-body ul, .post-body ol {
+  margin: 1em 0 1em 1.5em;
+}
+
+.post-body li { margin-bottom: 0.3em; }
+
+.post-body a { color: var(--acento); }
+.post-body a:hover { text-decoration: none; }
+
+/* Volver al inicio */
+.post-nav {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--borde);
+}
+
+.post-nav a {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--secundario);
+  text-decoration: none;
+}
+
+.post-nav a:hover { color: var(--acento); }
+
+/* ─── PIE ─── */
+footer {
+  border-top: 1px solid var(--borde);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+footer p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  color: var(--secundario);
+  letter-spacing: 0.04em;
+}
+
+/* ─── PÁGINA "SOBRE" ─── */
+.page-body { font-size: 1.05rem; }
+.page-body p { margin-bottom: 1.3em; }
+.page-header { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--borde); }
+.page-header h1 { font-size: 1.9rem; font-weight: 400; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 600px) {
+  html { font-size: 17px; }
+  .header-inner { flex-direction: column; gap: 0.75rem; }
+}

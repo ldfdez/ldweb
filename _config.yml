@@ -1,0 +1,31 @@
+title: LD
+description: Ensayos personales
+url: "https://ldfdez.es"
+baseurl: ""
+lang: es
+
+author:
+  name: Daniel Fernández
+
+permalink: /:year/:month/:day/:title/
+
+# Jekyll settings
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .gitignore
+  - README.md
+  - "*.WordPress.*.xml"
