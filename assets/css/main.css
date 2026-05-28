@@ -360,6 +360,7 @@ main {
 
 .post-body p { margin-bottom: 1.4em; }
 .post-body p:last-child { margin-bottom: 0; }
+.post-body p + p { clear: left; }
 
 .post-body > p:first-of-type::first-letter {
   font-family: var(--fd);
