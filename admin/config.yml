@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: es
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "posts"
+    label: "Entradas"
+    label_singular: "Entrada"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{date}}"
+    fields:
+      - { label: "Layout",   name: "layout", widget: "hidden", default: "post" }
+      - { label: "Título",   name: "title",  widget: "string" }
+      - { label: "Fecha",    name: "date",   widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { label: "Contenido", name: "body",  widget: "markdown" }
